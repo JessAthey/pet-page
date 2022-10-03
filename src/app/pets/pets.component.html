@@ -1,0 +1,22 @@
+<h2>Pets</h2>
+ <ul class="pets">
+  <li *ngFor="let pet of pets" (click)="onSelect(pet)">
+  
+<span class="badge">{{pet.id}}</span>
+<h3>Name: {{pet.name}}</h3>
+<h3>Favorite Food: {{pet.favoriteFood}}</h3>
+<h3>Favorite Toy Type: {{pet.likesToyType}}</h3>
+</li>
+</ul> 
+
+<div *ngIf="selectedPet">
+  <h2>{{selectedPet.name}} Details:</h2>
+  <div><span>Id: {{selectedPet.id}}</span></div>
+  <div><span>Favorite Food: {{selectedPet.favoriteFood}}</span></div>
+  <div><span>Favorite Toy Type: {{selectedPet.likesToyType}}</span></div>
+  <div>
+    <label>Change Favorite Food:
+      <input [(ngModel)]="selectedPet.favoriteFood" placeholder="favoriteFood">
+    </label>
+  </div>
+</div>
